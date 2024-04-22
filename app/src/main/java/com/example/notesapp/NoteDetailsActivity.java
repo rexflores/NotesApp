@@ -24,19 +24,23 @@ public class NoteDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_details);
 
+        // Initialize UI components and DBHelper
         editTextTitle = findViewById(R.id.editTextTitle);
         editTextContent = findViewById(R.id.editTextContent);
         btnSave = findViewById(R.id.btnSave);
         btnDelete = findViewById(R.id.btnDelete);
         dbHelper = new DBHelper(this);
 
+        // Retrieve note ID from intent
         Intent intent = getIntent();
         noteId = intent.getStringExtra("NOTE_ID");
 
+        // If note ID is provided, load note data for editing
         if (noteId != null) {
             loadNoteData();
         }
 
+        // Set click listener for save button
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +48,7 @@ public class NoteDetailsActivity extends AppCompatActivity {
             }
         });
 
+        // Set click listener for delete button
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,12 +57,14 @@ public class NoteDetailsActivity extends AppCompatActivity {
         });
     }
 
+    // Load note data for editing
     private void loadNoteData() {
         Cursor cursor = dbHelper.getNoteById(noteId);
         if (cursor != null && cursor.moveToFirst()) {
             int titleIndex = cursor.getColumnIndex("title");
             int contentIndex = cursor.getColumnIndex("content");
 
+            // Check if title and content columns exist
             if (titleIndex != -1 && contentIndex != -1) {
                 String title = cursor.getString(titleIndex);
                 String content = cursor.getString(contentIndex);
@@ -73,16 +80,18 @@ public class NoteDetailsActivity extends AppCompatActivity {
         }
     }
 
-
+    // Save or update the note
     private void saveNote() {
         String title = editTextTitle.getText().toString().trim();
         String content = editTextContent.getText().toString().trim();
 
+        // Check if title and content are not empty
         if (title.isEmpty() || content.isEmpty()) {
             Toast.makeText(this, "Please fill in both fields", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // Insert or update note based on whether note ID is provided
         if (noteId == null) {
             dbHelper.insertNoteData(title, content);
             Toast.makeText(this, "Note added successfully", Toast.LENGTH_SHORT).show();
@@ -93,10 +102,10 @@ public class NoteDetailsActivity extends AppCompatActivity {
         finish();
     }
 
+    // Delete the note
     private void deleteNote() {
         dbHelper.deleteNoteData(noteId);
         Toast.makeText(this, "Note deleted successfully", Toast.LENGTH_SHORT).show();
         finish();
     }
 }
-

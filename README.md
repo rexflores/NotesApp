@@ -8,7 +8,7 @@ To set up the project on your local machine, follow these steps:
 
 1. **Clone the Repository**: 
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/rexflores/NotesApp.git>
    ```
    
 2. **Open in Android Studio**:

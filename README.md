@@ -1,6 +1,6 @@
 # Notes App
 
-This Android application allows users to create, read, update, and delete notes. The notes are stored locally using SQLite database.
+This Android application allows users to create, read, update, and delete notes. The notes are stored locally using the SQLite database.
 
 ## Project Setup
 
@@ -50,6 +50,14 @@ To set up the project on your local machine, follow these steps:
 - Android Studio
 - Java
 - SQLite Database
+
+## Screenshots
+
+### Dashboard:
+<img src="https://github.com/rexflores/NotesApp/assets/114333417/c2fe5623-7cb5-470f-b0dd-06d8c3131836" width="30%" alt="Dashboard">
+
+### Notes Details:
+<img src="https://github.com/rexflores/NotesApp/assets/114333417/6e3b13ee-9fe2-41b0-b771-1fabebd7c728" width="30%" alt="Notes Details">
 
 ## Contributing
 

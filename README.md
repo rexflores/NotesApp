@@ -54,7 +54,7 @@ To set up the project on your local machine, follow these steps:
 ## Screenshots
 
 ### Dashboard:
-<img src="https://github.com/rexflores/NotesApp/assets/114333417/f9e68590-3aea-443c-b4c3-b972b59ee560" width="30%" alt="Dashboard">
+<img src="https://github.com/rexflores/NotesApp/assets/114333417/d1881adc-242d-4233-912c-1c1c05948892" width="30%" alt="Dashboard">
 
 ### Notes Details:
 <img src="https://github.com/rexflores/NotesApp/assets/114333417/6e3b13ee-9fe2-41b0-b771-1fabebd7c728" width="30%" alt="Notes Details">

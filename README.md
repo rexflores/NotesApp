@@ -63,6 +63,3 @@ To set up the project on your local machine, follow these steps:
 
 Contributions are welcome! If you find any bugs or have suggestions for improvement, please create an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
